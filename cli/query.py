@@ -189,15 +189,7 @@ if menu == 3:
     print('***********************************************') 
    
     
-def option_menu():
-    print(user_name,'Please choose an option: \n \n -1.List items by warehouse \n- 2. Search an item and place an order \n- 3. Quit \n \n: ')
-    global menu
-    try:
-        menu=int(input('Enter1,2 or3: '))
-    except:
-        print('')
-        clear_screen()  
-        print('Try Again!!!!')
+
       
     
     
