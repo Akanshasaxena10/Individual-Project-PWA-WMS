@@ -20,7 +20,7 @@ buyout=False
     
 
 
-
+app_is_running = True
 # YOUR CODE STARTS HERE
 
 
@@ -139,6 +139,7 @@ def menu_2():
             ############################################################   
                 quantity_valid=False
                 order_decision = False
+            order_decision = False
             while order_decision == False:
                 print(user_name,'Would you like to purchase this item?(Yes/No) -Item:',item)
                 print('***********************************************') 
