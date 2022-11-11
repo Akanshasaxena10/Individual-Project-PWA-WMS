@@ -11,7 +11,7 @@ from data import warehouse1, warehouse2
 import time
 import sys
 import os
-
+from art import *
 
 ####################### Variables###########
 menu_state=False
@@ -22,7 +22,11 @@ buyout=False
 
 app_is_running = True
 # YOUR CODE STARTS HERE
-
+tprint("Akki's Wonderland","rnd-xlarge")
+#tprint("Akki's House",font="rnd-medium")
+#art=text2art("Akki",font="block",chr_ignore=True)
+# print(art)
+# tprint("Akki's  Warehouse")
 
 print('')
 print('WMS-Warehouse Management System')
@@ -90,6 +94,7 @@ def menu_1():
         
     else:
         print('Back to the Menu-Press Enter')
+        print('***********************************************') 
    
    
 
@@ -140,14 +145,18 @@ def menu_2():
             ############################################################   
                 quantity_valid=False
                 order_decision = False
-            order_decision = False
+               
             while order_decision == False:
-                print(user_name,'Would you like to purchase this item?(Yes/No) -Item:',item)
+                print(user_name,'Would you like to purchase this item?(y/n) -Item:',item)
                 print('***********************************************') 
+                
                 order_status=input('')
-                if order_status == 'Yes':
+                # order_status=item[0].upper()+item[1:]
+                if order_status == 'y':
                     order_decision=True
-                elif order_status == 'No':    
+                    quantity_valid=False
+                    print('check')
+                elif order_status == 'n':    
                     order_decision=True
                     quantity_valid=True
             ################################################################   
@@ -159,16 +168,18 @@ def menu_2():
                     print('***************')
                     print('\nItem:',item,'\nQuantity:',quantity,'\nPick-up-location:',max_stock)
                     print('')
-                    
-                    buyout=input('Proceed to checkout?(Yes/No): ')
+                 
+                    buyout=input('Proceed to checkout?(y/n): ')
                     print('***********************************************') 
-                    if buyout == 'Yes':
+                    if buyout == 'y':
                         print('Purchase Accepted,Thankyou!!',user_name,'for your purchase with us')   
                         quantity_valid=True
                         buyout=True
                         
-                    elif buyout == 'No':
-                        print('Sorry!!!!',user_name,'We respect your choice!!!')  
+                    elif buyout == 'n':
+                        print('Sorry!!!!',user_name,'We respect your choice!!!') 
+                        print('***********************************************')
+                        print('***********************************************') 
                         
                         quantity_valid= True
                         
@@ -181,9 +192,9 @@ def menu_2():
                         amount_is_valid = True
                         
                     
-                else:
-                    print('')
-                    print(user_name,item,'was not found!!! Please search again!')
+        else:
+            print('')
+            print(user_name,item,'was not found!!! Please search again!')
 
 
 
