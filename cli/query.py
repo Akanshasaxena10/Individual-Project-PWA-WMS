@@ -57,17 +57,17 @@ print('')
 for x in range(0,12):
     print(end="\r")
     
+def option_menu():
+    print(user_name,'Please choose an option: \n- 1.List items by warehouse \n- 2.Search an item and place an order \n- 3.Quit\n \n')
 
-print(user_name,'Please choose an option: \n- 1.List items by warehouse \n- 2.Search an item and place an order \n- 3.Quit\n \n')
-
-print('-------------------------------')
-menu=int(input('Enter 1 ,2 or 3 : '))
-print('-------------------------------')
-if menu not in [1,2,3]:
-  print('Invalid Input!!!Please Enter 1, 2 or 3') 
-  print('**********************************************')
-  buyout=False
-
+    print('-------------------------------')
+    menu=int(input('Enter 1 ,2 or 3 : '))
+    print('-------------------------------')
+    if menu not in [1,2,3]:
+        print('Invalid Input!!!Please Enter 1, 2 or 3') 
+        print('**********************************************')
+        buyout=False
+    return menu
 def menu_1():
     
 
@@ -100,6 +100,7 @@ def menu_2():
     # Else, if they pick 2
     if menu == 2:
         item=input('What is the name of the Item?: ')
+        item=item[0].upper()+item[1:]
         if item in warehouse1 or item in warehouse2:
             print('')
             print(user_name,'Congratualations!!!!',item,'-','was found')
@@ -197,13 +198,16 @@ def menu_3():
 app_is_running = True
 
 while app_is_running == True:
-    menu=int(input('Enter 1 ,2 or 3 : '))
+    menu=option_menu()
     if menu == 1:
         menu_1()
+        
     elif menu == 2:
         menu_2()
+        
     elif menu == 3:
         menu_3()
+        break
     
 
       
