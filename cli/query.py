@@ -6,8 +6,8 @@ for item in warehouse1:
     # Your instructions here.
     # The `item` name will contain each of the strings (item names) in the list.
 """
-#from data import stock
-from data import warehouse1,warehouse2
+from data import stock
+
 import time
 import sys
 import os
@@ -73,32 +73,56 @@ def option_menu():
         print('**********************************************')
         buyout=False
     return menu
+# def menu_1():
+    
+
+    # # If they pick 1
+    # if menu == 1: 
+    #     w_len1=len(warehouse1)
+    #     print('***********************************************')  
+    #     print('The items in warehouse1 are: ', len(warehouse1), '\n')
+    #     for i in range(0, w_len1):
+        
+
+    #         print('-', warehouse1[i],)
+        
+    #     print('The items in warehouse2 are: ', len(warehouse2), '\n')   
+    
+    #     w_len2=len(warehouse2)
+    
+    #     for i in range(0,w_len2):
+    #         print('-', warehouse2[i])
+        
+    # else:
+    #     print('Back to the Menu-Press Enter')
+    #     print('***********************************************') 
+   
+ ##'''I need to refractor this block of code as the stock and its type has change so the logic did.Refractor the code for doing that first understand the type of dictionary.
+
 def menu_1():
-    
-
-    # If they pick 1
-    if menu == 1: 
-        w_len1=len(warehouse1)
-        print('***********************************************')  
-        print('The items in warehouse1 are: ', len(warehouse1), '\n')
-        for i in range(0, w_len1):
-        
-
-            print('-', warehouse1[i],)
-        
-        print('The items in warehouse2 are: ', len(warehouse2), '\n')   
-    
-        w_len2=len(warehouse2)
-    
-        for i in range(0,w_len2):
-            print('-', warehouse2[i])
-        
-    else:
-        print('Back to the Menu-Press Enter')
-        print('***********************************************') 
-   
-   
-
+    if menu == 1:
+        def filter_data(key,value):
+            result = []
+            for item in stock:
+                if item[key] == value:
+                    result.append(item)
+            return result
+        warehouse1 = filter_data('warehouse',1)
+        for item in warehouse1:
+            #print(filter_data('category',item['category']))
+            print('---')
+            print(' ')
+            print('Item:----',item['category'])
+            ## no of items
+            print('total items of in warehouse1', len(filter_data('category',item['category'])))
+            #print('~',item)
+            #print(item['category'])
+        warehouse2 = filter_data('warehouse',2)
+        for item in warehouse2:
+            pass
+            #print(filter_data('category',item['category']))
+            #print('~',item)
+            #print(item['category'])
         
 def menu_2():
     
