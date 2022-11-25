@@ -6,12 +6,13 @@ for item in warehouse1:
     # Your instructions here.
     # The `item` name will contain each of the strings (item names) in the list.
 """
-
-from data import warehouse1, warehouse2
+#from data import stock
+from data import warehouse1,warehouse2
 import time
 import sys
 import os
 from art import *
+
 
 ####################### Variables###########
 menu_state=False
@@ -22,8 +23,8 @@ buyout=False
 
 app_is_running = True
 # YOUR CODE STARTS HERE
-tprint("Akki's Wonderland","rnd-xlarge")
-#tprint("Akki's House",font="rnd-medium")
+# tprint("Akki's Wonderland","rnd-xlarge")
+tprint("Akki's House",font="rnd-medium")
 #art=text2art("Akki",font="block",chr_ignore=True)
 # print(art)
 # tprint("Akki's  Warehouse")
