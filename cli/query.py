@@ -55,7 +55,7 @@ def get_person_entity():
     return User(user_name=name)
         
             
-STATE['USER'] = get_person_entity()
+
 
 def credentials(func):
     def inner(item_name, total_item):
@@ -186,4 +186,8 @@ def start_cli(operation):
         print('Wrong operation number')
         start_cli(selection())
 
-start_cli(selection())
+
+if "__main__" == __name__:
+    STATE['USER'] = get_person_entity()
+
+    start_cli(selection())
